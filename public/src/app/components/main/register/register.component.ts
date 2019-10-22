@@ -7,9 +7,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
+  reg_type: boolean = true
   constructor() { }
 
   ngOnInit() {
+    this.reg_type = false
+  }
+
+  change_to_user() {
+    if (this.reg_type == true) {
+      this.reg_type = false
+      console.log("Change to user")
+    }
+    else {
+      console.log("No Change")
+    }
+  }
+  change_to_rec() {
+    if (this.reg_type == false) {
+      this.reg_type = true
+      console.log("Change to Rec")
+    }
+    else {
+      console.log("No Change")
+    }
+
   }
 
 }

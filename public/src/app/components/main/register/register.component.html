@@ -1,1 +1,43 @@
-<p>register works!</p>
+<!--Register Start-->
+<div class="col-md-6" style="display: inline-block;">
+    <button type="button" class="btn btn-block btn-danger" data-toggle="modal"
+        data-target="#modal-form">Register</button>
+    <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form"
+        style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <div class="card bg-secondary shadow border-0">
+                        <div class="card-header bg-white pb-2">
+                            
+                            <div class="btn-wrapper text-center">
+                                <h3>Register as</h3>
+                            </div>
+                        </div>
+                        <div class="card-body px-lg-5 py-lg-5">
+                            
+                            <form role="form">
+                                
+                                <div class="form-group">
+                                        <input type="button" class="btn btn-info" value="Job seeker" (click)="change_to_user()">
+                                        <input type="button" class="btn btn-success" value="Recruiter" (click)="change_to_rec()">
+                                </div>
+
+                                <div *ngIf="!reg_type">
+                                    <app-register-as-user></app-register-as-user>
+                                </div>
+
+                                <div *ngIf="reg_type">
+                                    <app-register-as-recruiter></app-register-as-recruiter>
+                                </div>
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-primary my-4">Register</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
